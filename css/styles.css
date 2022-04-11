@@ -788,9 +788,8 @@ pointer-events: none;
       
         height: 18px;
         width: 18px;
-        fill: var(--title-color);
-        transition: fill 250ms var(--animation);
-            }
+        fill: green;
+                    }
 
       .form-input {
         box-sizing: border-box;
@@ -904,9 +903,11 @@ pointer-events: none;
       border-color: var(--akcent-color);
       transition:  border-color var(--animation);
   }
-  .form-input:hover ~.modal-icon, .from-input:focus ~.modal-icon{
-      fill: var(--akcent-color);
-      }
+  .form-input:hover + .modal-icon, 
+  .form-input:focus + .modal-icon {
+    fill: red;
+
+  }
   .from-field textarea:hover{
       border-color: var(--akcent-color);
       transition:  border-color var(--animation);
