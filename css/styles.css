@@ -559,6 +559,79 @@ color: rgba(255, 255, 255, 0.6);
   {background-color: #2196F3;
    }
   
+/*футер підписка*/
+.subscribe {
+  margin-left: 93px;
+  width: 570px;
+  }
+  
+  .subscribe-titel {
+    display: inline-block;
+    margin-bottom: 20px;
+  
+    line-height: 1.14;
+    text-transform: uppercase;
+    
+    color: var(--header-bg-color) ;
+  }
+  
+  .subscribe-btn-span {
+  display: flex;
+  }
+  
+  .subscribe-input {
+    width: 358px;
+    height: 50px;
+    
+    padding: 15px 16px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+  
+    color: rgb(255, 255, 255, 60%);
+    background-color: transparent;
+  }
+  
+  .subscribe-btn {
+      position: relative;
+  
+      padding: 13px 28px 13px 29px;
+                
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.85;
+      letter-spacing: 0.06em;
+      text-align: left;
+    
+      color: var(--header-bg-color);
+      background-color: var(--akcent-color);
+      cursor: pointer;
+    
+      border-radius: 4px;
+      border: none;
+    
+      min-width: 200px;
+    
+      transition: background-color var(--animation);
+    }
+    
+    .subscribe-btn:hover,
+    .subscribe-btn:focus {
+      background-color: #188ce8;
+    }
+  
+    .subscribe-icon {
+      position: absolute;
+      fill: var(--header-bg-color);
+  
+      top: 15px;
+      right: 28px;
+      }
+  
+
+
 /*portfolio*/
 .filter-list {
   display: flex;
@@ -696,12 +769,13 @@ transition: box-shadow var(--animation);
 position: fixed;
 top: 0;
 left: 0;
-width: 100vw;
+width: 100vh;
 height: 100vh;
 background-color: rgba(0, 0, 0, 0.2);
 
 opacity: 1;
-transition: opacity 250ms var(--cubic), transform 250ms var(--cubic);
+transition: opacity 250ms var(--cubic),
+transform 250ms var(--cubic);
 }
 
 .backdrop.is-hidden {
@@ -716,10 +790,16 @@ pointer-events: none;
   left: 50%;
   transform: translate(-50%, -50%);
 
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+
   width: 528px;
   height: 581px;
   
-  background-color: #fff;
+  background-color: var(--header-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
   opacity: 1;
@@ -740,20 +820,21 @@ pointer-events: none;
   width: 30px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: var(--header-bg-color);
   box-sizing: border-box;
   cursor: pointer;
  }
 
  .modal-btn-icon {
        fill: #000000;
+       transition: fill 250ms var(--cubic);
   }
-
-  .modal-form {
-    padding-top: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
+  .modal-btn:hover .modal-btn-icon,
+.modal-btn:focus .modal-btn-icon {
+  fill: var(--akcent-color);
+}
+  
+  
   .form-title {
     font-family: 'Roboto';
     font-weight: 700;
@@ -779,6 +860,16 @@ pointer-events: none;
       margin-bottom: 10px;
       }
 
+    .form-field:last-child {
+    
+      margin-bottom: 0;
+      }
+
+      .form-field:hover input,
+      .form-field:focus input {
+      border-color: var(--akcent-color);
+      }
+
       .modal-icon {
         position: absolute;
         bottom: 11px;
@@ -788,7 +879,7 @@ pointer-events: none;
       
         height: 18px;
         width: 18px;
-        fill: green;
+        fill: var(--title-color);
                     }
 
       .form-input {
@@ -796,13 +887,20 @@ pointer-events: none;
         height: 40px;
         margin: 0; 
         padding-left: 42px;
+        cursor: pointer;
+        
         border: 1px solid rgba(33, 33, 33, 0.2);
         border-radius: 4px;
         transition:  border-color var(--animation);
         color: var(--main-text-color);
         outline: transparent;
         }
-      
+        .form-input:hover + .modal-icon, 
+        .form-input:focus + .modal-icon {
+          fill:  var(--akcent-color);
+        }
+  
+   
         .form-label {
         font-family: 'Roboto';
         font-style: normal;
@@ -811,6 +909,7 @@ pointer-events: none;
         line-height: 1.16;
         letter-spacing: 0.01em;
         color: var(--main-text-color);
+        cursor: pointer;
 
         margin-bottom: 4px;
          
@@ -829,6 +928,8 @@ pointer-events: none;
       transition:  border-color var(--animation);
       outline: transparent;
       color: var(--main-text-color);
+      cursor: pointer;
+      margin-bottom: 20px;
 
        }
 
@@ -842,7 +943,11 @@ pointer-events: none;
     
         color: rgba(117, 117, 117, 0.5);
     }
-      
+    .form-field:hover textarea,
+      .form-field:focus textarea {
+      border-color: var(--akcent-color);
+      transition:  border-color var(--animation);
+  }
     .form-button{
       background: #2196F3;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -851,11 +956,16 @@ pointer-events: none;
       display: flex;
       align-items: center;
       text-align: center;
+
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.85;
       letter-spacing: 0.06em;
+      
+      cursor: pointer;
   
       color: #FFFFFF;
       border: none;
-      margin-bottom: 40px;
       margin-right: auto;
       margin-left: auto;
       transition: background-color var(--animation); 
@@ -864,8 +974,18 @@ pointer-events: none;
       background: #188CE8;
       transition: background-color var(--animation);
     }
-    .form-field-checkbox {
+    .checkbox-lable {
       position: relative;
+      display: flex;
+      align-items: center;
+     
+
+    
+      font-size: 14px;
+      line-height: 1.71;
+      
+      letter-spacing: 0.03em;
+      margin-bottom: 30px;
     }
 
     .checkbox{
@@ -875,15 +995,13 @@ pointer-events: none;
   }
   
   .checkbox-icon-svg{
-      position: absolute;
-      left: 13px;
+     margin-right: 7px;
       width: 16px;
       height: 15px;
       border: 2px solid #2a2a2a;
       border-radius: 4px;
       fill: var(--white-text-color);
-      margin-left: 12px;
-  }
+        }
   .checkbox:checked ~ .checkbox-icon-svg{
       fill: #FFFFFF ;
       border-color: var(--akcent-color);
@@ -892,6 +1010,10 @@ pointer-events: none;
       background-size: contain;
   
   }
+  .modal-link {
+    margin-left: 5px;
+    color: var(--akcent-color);
+  }
   
   .policy{
       color: var(--akcent-color);
@@ -899,16 +1021,6 @@ pointer-events: none;
   }
   
    
-  .form-input:hover,.form-input:focus{
-      border-color: var(--akcent-color);
-      transition:  border-color var(--animation);
-  }
-  .form-input:hover + .modal-icon, 
-  .form-input:focus + .modal-icon {
-    fill: red;
+  
 
-  }
-  .from-field textarea:hover{
-      border-color: var(--akcent-color);
-      transition:  border-color var(--animation);
-  }
+      
